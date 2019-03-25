@@ -130,13 +130,14 @@ def make_summary(year, month):
 def format_datetime(dt):
     if not dt or dt != dt:
         return None
-    return f"{int(dt.hour)}:{round(int(dt.minute), -1)}"
+    return f"{int(dt.hour)}:{dt.minute // 10 * 10}"
 
 
 if __name__ == "__main__":
-    year = input("year:")
-    month = input("month:")
-    summary = make_summary(2019, 3)
+    now = datetime.datetime.now()
+    year = now.year
+    month = now.month
+    summary = make_summary(year, month)
     formatted = pd.DataFrame()
     formatted["月"] = month
     formatted["日"] = summary["date"].dt.day
