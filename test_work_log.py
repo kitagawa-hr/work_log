@@ -46,10 +46,10 @@ class TestWorklog(unittest.TestCase):
 
     def test_format_datetime(self):
         test_cases = [
-            (datetime(2019, 10, 10, 12, 24), "12:24"),
-            (datetime(2019, 10, 10, 1, 24), "1:24"),
-            (datetime(2019, 10, 10, 3, 24), "3:24"),
-            (datetime(2019, 10, 10, 0, 24), "0:24"),
+            (datetime(2019, 10, 10, 12, 24), "12:20"),
+            (datetime(2019, 10, 10, 1, 22), "1:20"),
+            (datetime(2019, 10, 10, 3, 27), "3:30"),
+            (datetime(2019, 10, 10, 0, 29), "0:30"),
             (None, None),
         ]
         for dt, formatted_dt in test_cases:

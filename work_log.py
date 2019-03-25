@@ -130,7 +130,7 @@ def make_summary(year, month):
 def format_datetime(dt):
     if not dt or dt != dt:
         return None
-    return f"{int(dt.hour)}:{int(dt.minute)}"
+    return f"{int(dt.hour)}:{round(int(dt.minute), -1)}"
 
 
 if __name__ == "__main__":
